@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberação de Acesso - Algoritmo Pro</title>
+    <!-- Tailwind CSS para o design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons para os ícones -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glow { box-shadow: 0 0 60px rgba(16,185,129,0.3); }
+    </style>
+</head>
+<body class="bg-[#0a0a0c] text-slate-200 selection:bg-emerald-500/30">
+
+    <!-- Top Warning Bar -->
+    <div class="bg-emerald-600 text-black py-2 px-4 text-center text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2">
+        <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+        Acesso Temporário: Esta página expira em breve
+    </div>
+
+    <div class="max-w-3xl mx-auto px-6 py-12">
+        
+        <!-- Header Section -->
+        <div class="text-center mb-12">
+            <div class="inline-block p-3 bg-emerald-500/10 rounded-2xl border border-emerald-500/20 mb-6">
+                <i data-lucide="zap" class="text-emerald-500 w-8 h-8"></i>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                Como funciona a <span class="text-emerald-500">Falha do Algoritmo</span>
+            </h1>
+            <p class="text-slate-400 text-lg">
+                Abaixo explicamos a lógica técnica por trás do bug e como você vai lucrar com isso hoje.
+            </p>
+        </div>
+
+        <!-- Explanation -->
+        <div class="space-y-6 mb-16">
+            <div class="p-6 rounded-3xl bg-[#16161a] border border-white/5">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-2 h-6 bg-emerald-500 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-white">O que é o Bug?</h2>
+                </div>
+                <p class="text-slate-400 leading-relaxed">
+                    Todo sistema de cassino opera com um <span class="text-white font-semibold">RNG (Random Number Generator)</span>. No entanto, em janelas de atualização de servidor, o algoritmo entra em um estado de <span class="text-emerald-400 font-bold">Sincronia Linear</span>. 
+                    <br><br>
+                    Nesse momento, o sistema deixa de ser aleatório e passa a seguir um padrão matemático previsível. Nossa ferramenta detecta a frequência exata dessa oscilação.
+                </p>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-[#16161a] border border-white/5">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-2 h-6 bg-emerald-500 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-white">Por que é lucrativo?</h2>
+                </div>
+                <p class="text-slate-400 leading-relaxed">
+                    Enquanto o jogador comum aposta na sorte, você aposta na <span class="text-white font-semibold">matemática</span>. Ao entrar no momento da falha, a probabilidade de ganho sobe para <span class="text-emerald-400 font-bold">92.4%</span>.
+                </p>
+            </div>
+        </div>
+
+        <!-- PAYMENT SECTION -->
+        <div class="relative p-1 rounded-[40px] bg-gradient-to-b from-emerald-400 via-emerald-600 to-emerald-800 glow">
+            <div class="bg-[#0a0a0c] rounded-[39px] p-8 md:p-12 text-center">
+                
+                <div class="flex items-center justify-center gap-2 text-emerald-500 font-bold mb-4 uppercase text-sm tracking-widest">
+                    <i data-lucide="lock" class="w-4 h-4"></i>
+                    Liberação de Acesso Imediato
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-6">
+                    Pagamento Único: <span class="text-emerald-400">R$ 47,00</span>
+                </h2>
+
+                <!-- PIX BOX -->
+                <div class="bg-[#16161a] border-2 border-dashed border-emerald-500/50 rounded-3xl p-6 mb-8 relative overflow-hidden">
+                    <p class="text-slate-500 text-xs uppercase font-bold mb-3 tracking-tighter">Chave PIX para Liberação</p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <span id="pixKey" class="text-xl md:text-2xl font-mono font-bold text-white break-all">6fac9e7d-522c-403b-b1b8-c0783c4d694b</span>
+                        <button onclick="copyPix()" id="copyBtn" class="flex items-center gap-2 px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-xl transition-all active:scale-95">
+                            <i data-lucide="copy" class="w-4 h-4"></i>
+                            <span>COPIAR</span>
+                        </button>
+                    </div>
+                    <p class="mt-4 text-slate-400 text-sm">
+                        Favorecido: <span class="text-white font-bold">Vinicius.S</span>
+                    </p>
+                </div>
+
+                <!-- Instructions -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 text-left">
+                    <div class="flex items-center gap-3 p-3 bg-white/5 rounded-2xl border border-white/5">
+                        <span class="w-6 h-6 bg-emerald-500 text-black rounded-full flex items-center justify-center text-xs font-black">1</span>
+                        <span class="text-slate-300 text-xs font-medium">Copie a chave PIX acima</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-white/5">
+                        <span class="w-6 h-6 bg-emerald-500 text-black rounded-full flex items-center justify-center text-xs font-black">2</span>
+                        <span class="text-slate-300 text-xs font-medium">Faça o envio de R$ 47,00</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-white/5 rounded-2xl border border-white/5">
+                        <span class="w-6 h-6 bg-emerald-500 text-black rounded-full flex items-center justify-center text-xs font-black">3</span>
+                        <span class="text-slate-300 text-xs font-medium">Envie o comprovante no suporte</span>
+                    </div>
+                </div>
+
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/5593992372906?text=Olá! Acabei de fazer o PIX do acesso ao Algoritmo. Segue o comprovante:" target="_blank" class="flex items-center justify-center gap-3 w-full py-5 bg-[#25D366] hover:bg-[#20ba5a] text-white font-black text-xl rounded-2xl transition-all transform hover:scale-105 shadow-lg">
+                    <i data-lucide="message-circle" class="w-6 h-6"></i>
+                    ENVIAR COMPROVANTE AGORA
+                </a>
+
+                <div class="mt-6 flex items-center justify-center gap-2 text-slate-500 text-sm">
+                    <i data-lucide="clock" class="w-4 h-4 text-emerald-500"></i>
+                    <span>Vaga reservada por: <span id="timer" class="text-white font-mono font-bold">09:59</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 opacity-60">
+            <div class="flex items-center gap-3 justify-center sm:justify-start">
+                <i data-lucide="shield-check" class="text-emerald-500 w-5 h-5"></i>
+                <span class="text-xs text-slate-400">Acesso criptografado e seguro</span>
+            </div>
+            <div class="flex items-center gap-3 justify-center sm:justify-start">
+                <i data-lucide="check-circle-2" class="text-emerald-500 w-5 h-5"></i>
+                <span class="text-xs text-slate-400">Entrega imediata via WhatsApp</span>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="py-10 text-center text-slate-600 text-[10px] uppercase tracking-widest">
+        © 2026 ALGORITMO PRO - DESENVOLVIDO POR VINICIUS.S - SISTEMA DE ANÁLISE DE PADRÕES
+    </footer>
+
+    <script>
+        // Inicializar ícones do Lucide
+        lucide.createIcons();
+
+        // Função de copiar PIX
+        function copyPix() {
+            const pixKey = document.getElementById('pixKey').innerText;
+            const btn = document.getElementById('copyBtn');
+            
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(pixKey).then(handleSuccess, handleError);
+            } else {
+                const textArea = document.createElement("textarea");
+                textArea.value = pixKey;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    handleSuccess();
+                } catch (err) {
+                    handleError(err);
+                }
+                document.body.removeChild(textArea);
+            }
+
+            function handleSuccess() {
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i><span>COPIADO!</span>';
+                lucide.createIcons();
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    lucide.createIcons();
+                }, 2000);
+            }
+
+            function handleError(err) {
+                console.error('Erro ao copiar: ', err);
+            }
+        }
+
+        // Timer de contagem regressiva
+        let time = 599; // 9 minutos e 59 segundos
+        const timerElement = document.getElementById('timer');
+
+        setInterval(() => {
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+            timerElement.innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            if (time > 0) time--;
+        }, 1000);
+    </script>
+</body>
+</html>
